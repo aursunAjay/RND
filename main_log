@@ -1,0 +1,102 @@
+
+a.out:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00008000 <main>:
+    8000:	b480      	push	{r7}
+    8002:	af00      	add	r7, sp, #0
+    8004:	2300      	movs	r3, #0
+    8006:	4618      	mov	r0, r3
+    8008:	46bd      	mov	sp, r7
+    800a:	bc80      	pop	{r7}
+    800c:	4770      	bx	lr
+
+0000800e <reset_handler>:
+    800e:	b480      	push	{r7}
+    8010:	af00      	add	r7, sp, #0
+    8012:	bf00      	nop
+    8014:	46bd      	mov	sp, r7
+    8016:	bc80      	pop	{r7}
+    8018:	4770      	bx	lr
+
+0000801a <default_handler>:
+    801a:	b480      	push	{r7}
+    801c:	af00      	add	r7, sp, #0
+    801e:	bf00      	nop
+    8020:	46bd      	mov	sp, r7
+    8022:	bc80      	pop	{r7}
+    8024:	4770      	bx	lr
+
+Disassembly of section .rodata:
+
+00008028 <const_>:
+    8028:	00000000 	andeq	r0, r0, r0
+
+Disassembly of section .data:
+
+0001802c <data>:
+   1802c:	0000000a 	andeq	r0, r0, sl
+
+00018030 <extern_>:
+   18030:	0000000a 	andeq	r0, r0, sl
+
+Disassembly of section isr_vector:
+
+00018034 <vector>:
+   18034:	20020000 	andcs	r0, r2, r0
+   18038:	0000800f 	andeq	r8, r0, pc
+   1803c:	0000801b 	andeq	r8, r0, fp, lsl r0
+   18040:	0000801b 	andeq	r8, r0, fp, lsl r0
+
+Disassembly of section .bss:
+
+00018044 <global>:
+   18044:	00000000 	andeq	r0, r0, r0
+
+00018048 <static_>:
+   18048:	00000000 	andeq	r0, r0, r0
+
+0001804c <volatile_>:
+   1804c:	00000000 	andeq	r0, r0, r0
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347 	bcc	10d0d24 <_stack+0x1050d24>
+   4:	4e472820 	cdpmi	8, 4, cr2, cr7, cr0, {1}
+   8:	72412055 	subvc	r2, r1, #85	; 0x55
+   c:	6d45206d 	stclvs	0, cr2, [r5, #-436]	; 0xfffffe4c
+  10:	64646562 	strbtvs	r6, [r4], #-1378	; 0xfffffa9e
+  14:	54206465 	strtpl	r6, [r0], #-1125	; 0xfffffb9b
+  18:	636c6f6f 	cmnvs	ip, #444	; 0x1bc
+  1c:	6e696168 	powvsez	f6, f1, #0.0
+  20:	2e303120 	rsfcssp	f3, f0, f0
+  24:	30322d33 	eorscc	r2, r2, r3, lsr sp
+  28:	312e3132 			; <UNDEFINED> instruction: 0x312e3132
+  2c:	31202930 			; <UNDEFINED> instruction: 0x31202930
+  30:	2e332e30 	mrccs	14, 1, r2, cr3, cr0, {1}
+  34:	30322031 	eorscc	r2, r2, r1, lsr r0
+  38:	38303132 	ldmdacc	r0!, {r1, r4, r5, r8, ip, sp}
+  3c:	28203432 	stmdacs	r0!, {r1, r4, r5, sl, ip, sp}
+  40:	656c6572 	strbvs	r6, [ip, #-1394]!	; 0xfffffa8e
+  44:	29657361 	stmdbcs	r5!, {r0, r5, r6, r8, r9, ip, sp, lr}^
+	...
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00002d41 	andeq	r2, r0, r1, asr #26
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	00000023 	andeq	r0, r0, r3, lsr #32
+  10:	2d453705 	stclcs	7, cr3, [r5, #-20]	; 0xffffffec
+  14:	0d06004d 	stceq	0, cr0, [r6, #-308]	; 0xfffffecc
+  18:	02094d07 	andeq	r4, r9, #448	; 0x1c0
+  1c:	01140412 	tsteq	r4, r2, lsl r4
+  20:	03170115 	tsteq	r7, #1073741829	; 0x40000005
+  24:	01190118 	tsteq	r9, r8, lsl r1
+  28:	061e011a 			; <UNDEFINED> instruction: 0x061e011a
+  2c:	Address 0x000000000000002c is out of bounds.
+
