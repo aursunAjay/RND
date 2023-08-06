@@ -3,7 +3,7 @@ Memory Configuration
 
 Name             Origin             Length             Attributes
 CCMRAM           0x0000000010000000 0x0000000000010000 xrw
-RAM              0x0000000020000000 0x0000000000020000 xrw
+SRAM             0x0000000020000000 0x0000000000020000 xrw
 FLASH            0x0000000008000000 0x0000000000100000 xr
 *default*        0x0000000000000000 0xffffffffffffffff
 
@@ -11,73 +11,161 @@ Linker script and memory map
 
 LOAD main.o
 LOAD startup.o
-                0x0000000000000200                _Min_Heap_Size = 0x200
-                0x0000000000000400                _Min_Stack_Size = 0x400
 
-.isr_vector     0x0000000008000000       0x10
-                0x0000000008000000                . = ALIGN (0x4)
+.text           0x0000000008000000      0x224
  *(.isr_vector)
- .isr_vector    0x0000000008000000       0x10 startup.o
-                0x0000000008000000                vector
-
-.text           0x0000000008000010       0x26
-                0x0000000008000010                . = ALIGN (0x4)
+ .isr_vector    0x0000000008000000      0x188 startup.o
+                0x0000000008000000                vectors
  *(.text)
- .text          0x0000000008000010        0xe main.o
-                0x0000000008000010                main
- .text          0x000000000800001e       0x18 startup.o
-                0x000000000800001e                reset_handler
-                0x000000000800002a                default_handler
-                0x000000000800002a                nmi_handler
-                0x0000000008000036                _etext = .
-
-.glue_7         0x0000000008000038        0x0
- .glue_7        0x0000000008000038        0x0 linker stubs
-
-.glue_7t        0x0000000008000038        0x0
- .glue_7t       0x0000000008000038        0x0 linker stubs
-
-.vfp11_veneer   0x0000000008000038        0x0
- .vfp11_veneer  0x0000000008000038        0x0 linker stubs
-
-.v4_bx          0x0000000008000038        0x0
- .v4_bx         0x0000000008000038        0x0 linker stubs
-
-.iplt           0x0000000008000038        0x0
- .iplt          0x0000000008000038        0x0 startup.o
-
-.rodata         0x0000000008000038        0x9
-                0x0000000008000038                . = ALIGN (0x4)
+ .text          0x0000000008000188        0xe main.o
+                0x0000000008000188                main
+ *fill*         0x0000000008000196        0x2 
+ .text          0x0000000008000198       0x8c startup.o
+                0x0000000008000198                RTC_Alarm_IRQHandler
+                0x0000000008000198                HASH_RNG_IRQHandler
+                0x0000000008000198                EXTI2_IRQHandler
+                0x0000000008000198                TIM8_CC_IRQHandler
+                0x0000000008000198                DebugMon_Handler
+                0x0000000008000198                TIM1_CC_IRQHandler
+                0x0000000008000198                DMA2_Stream5_IRQHandler
+                0x0000000008000198                HardFault_Handler
+                0x0000000008000198                DMA1_Stream5_IRQHandler
+                0x0000000008000198                SysTick_Handler
+                0x0000000008000198                PVD_IRQHandler
+                0x0000000008000198                SDIO_IRQHandler
+                0x0000000008000198                TAMP_STAMP_IRQHandler
+                0x0000000008000198                PendSV_Handler
+                0x0000000008000198                NMI_Handler
+                0x0000000008000198                CAN2_RX1_IRQHandler
+                0x0000000008000198                EXTI3_IRQHandler
+                0x0000000008000198                TIM8_TRG_COM_TIM14_IRQHandler
+                0x0000000008000198                TIM1_UP_TIM10_IRQHandler
+                0x0000000008000198                TIM8_UP_TIM13_IRQHandler
+                0x0000000008000198                I2C3_ER_IRQHandler
+                0x0000000008000198                EXTI0_IRQHandler
+                0x0000000008000198                I2C2_EV_IRQHandler
+                0x0000000008000198                DMA1_Stream2_IRQHandler
+                0x0000000008000198                CAN1_RX0_IRQHandler
+                0x0000000008000198                FPU_IRQHandler
+                0x0000000008000198                OTG_HS_WKUP_IRQHandler
+                0x0000000008000198                UsageFault_Handler
+                0x0000000008000198                CAN2_SCE_IRQHandler
+                0x0000000008000198                DMA2_Stream2_IRQHandler
+                0x0000000008000198                SPI1_IRQHandler
+                0x0000000008000198                TIM6_DAC_IRQHandler
+                0x0000000008000198                TIM1_BRK_TIM9_IRQHandler
+                0x0000000008000198                DCMI_IRQHandler
+                0x0000000008000198                CAN2_RX0_IRQHandler
+                0x0000000008000198                DMA2_Stream3_IRQHandler
+                0x0000000008000198                USART6_IRQHandler
+                0x0000000008000198                USART3_IRQHandler
+                0x0000000008000198                CRYP_IRQHandler
+                0x0000000008000198                CAN1_RX1_IRQHandler
+                0x0000000008000198                UART5_IRQHandler
+                0x0000000008000198                DMA2_Stream0_IRQHandler
+                0x0000000008000198                TIM4_IRQHandler
+                0x0000000008000198                I2C1_EV_IRQHandler
+                0x0000000008000198                DMA1_Stream6_IRQHandler
+                0x0000000008000198                DMA1_Stream1_IRQHandler
+                0x0000000008000198                UART4_IRQHandler
+                0x0000000008000198                TIM3_IRQHandler
+                0x0000000008000198                RCC_IRQHandler
+                0x0000000008000198                TIM8_BRK_TIM12_IRQHandler
+                0x0000000008000198                Default_Handler
+                0x0000000008000198                EXTI15_10_IRQHandler
+                0x0000000008000198                ADC_IRQHandler
+                0x0000000008000198                DMA1_Stream7_IRQHandler
+                0x0000000008000198                TIM7_IRQHandler
+                0x0000000008000198                CAN2_TX_IRQHandler
+                0x0000000008000198                TIM5_IRQHandler
+                0x0000000008000198                DMA2_Stream7_IRQHandler
+                0x0000000008000198                I2C3_EV_IRQHandler
+                0x0000000008000198                EXTI9_5_IRQHandler
+                0x0000000008000198                RTC_WKUP_IRQHandler
+                0x0000000008000198                ETH_WKUP_IRQHandler
+                0x0000000008000198                SPI2_IRQHandler
+                0x0000000008000198                OTG_HS_EP1_IN_IRQHandler
+                0x0000000008000198                MemManage_Handler
+                0x0000000008000198                DMA1_Stream0_IRQHandler
+                0x0000000008000198                CAN1_TX_IRQHandler
+                0x0000000008000198                SVC_Handler
+                0x0000000008000198                EXTI4_IRQHandler
+                0x0000000008000198                FSMC_IRQHandler
+                0x0000000008000198                ETH_IRQHandler
+                0x0000000008000198                OTG_HS_EP1_OUT_IRQHandler
+                0x0000000008000198                WWDG_IRQHandler
+                0x0000000008000198                TIM2_IRQHandler
+                0x0000000008000198                OTG_FS_WKUP_IRQHandler
+                0x0000000008000198                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0000000008000198                OTG_HS_IRQHandler
+                0x0000000008000198                EXTI1_IRQHandler
+                0x0000000008000198                USART2_IRQHandler
+                0x0000000008000198                I2C2_ER_IRQHandler
+                0x0000000008000198                DMA2_Stream1_IRQHandler
+                0x0000000008000198                CAN1_SCE_IRQHandler
+                0x0000000008000198                DMA2_Stream4_IRQHandler
+                0x0000000008000198                BusFault_Handler
+                0x0000000008000198                USART1_IRQHandler
+                0x0000000008000198                OTG_FS_IRQHandler
+                0x0000000008000198                SPI3_IRQHandler
+                0x0000000008000198                DMA1_Stream4_IRQHandler
+                0x0000000008000198                I2C1_ER_IRQHandler
+                0x0000000008000198                DMA2_Stream6_IRQHandler
+                0x0000000008000198                DMA1_Stream3_IRQHandler
+                0x000000000800019e                Reset_Handler
+ *(.text.*)
+ *(.init)
+ *(.fini)
  *(.rodata)
- .rodata        0x0000000008000038        0x9 main.o
-                0x0000000008000038                data
-                0x000000000800003c                data1
-                0x0000000008000040                data2
+ *(.rodata.*)
+                0x0000000008000224                . = ALIGN (0x4)
+                0x0000000008000224                _etext = .
+                0x0000000008000224                _la_data = LOADADDR (.data)
 
-.rel.dyn        0x0000000008000044        0x0
- .rel.iplt      0x0000000008000044        0x0 startup.o
+.glue_7         0x0000000008000224        0x0
+ .glue_7        0x0000000008000224        0x0 linker stubs
 
-.data           0x0000000020000000       0x2c load address 0x0000000008000041
-                0x0000000020000000                . = ALIGN (0x4)
+.glue_7t        0x0000000008000224        0x0
+ .glue_7t       0x0000000008000224        0x0 linker stubs
+
+.vfp11_veneer   0x0000000008000224        0x0
+ .vfp11_veneer  0x0000000008000224        0x0 linker stubs
+
+.v4_bx          0x0000000008000224        0x0
+ .v4_bx         0x0000000008000224        0x0 linker stubs
+
+.iplt           0x0000000008000224        0x0
+ .iplt          0x0000000008000224        0x0 startup.o
+
+.rel.dyn        0x0000000008000224        0x0
+ .rel.iplt      0x0000000008000224        0x0 startup.o
+
+.data           0x0000000020000000        0x0 load address 0x0000000008000224
                 0x0000000020000000                _sdata = .
  *(.data)
- .data          0x0000000020000000       0x28 main.o
-                0x0000000020000000                data_a
- .data          0x0000000020000028        0x4 startup.o
-                0x0000000020000028                extern_
-                0x000000002000002c                _edata = .
+ .data          0x0000000020000000        0x0 main.o
+ .data          0x0000000020000000        0x0 startup.o
+ *(.data.*)
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _edata = .
 
-.igot.plt       0x000000002000002c        0x0 load address 0x000000000800006d
- .igot.plt      0x000000002000002c        0x0 startup.o
+.igot.plt       0x0000000020000000        0x0 load address 0x0000000008000224
+ .igot.plt      0x0000000020000000        0x0 startup.o
 
-.bss            0x000000002000002c       0x28 load address 0x000000000800006d
-                0x000000002000002c                . = ALIGN (0x4)
- *(COMMON)
-                0x000000002000002c                _sbss = .
+.bss            0x0000000020000000        0x0 load address 0x0000000008000224
+                0x0000000020000000                _sbss = .
+                0x0000000020000000                __bss_start__ = _sbss
  *(.bss)
- .bss           0x000000002000002c       0x28 main.o
-                0x000000002000002c                data1_a
- .bss           0x0000000020000054        0x0 startup.o
+ .bss           0x0000000020000000        0x0 main.o
+ .bss           0x0000000020000000        0x0 startup.o
+ *(.bss.*)
+ *(COMMON)
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _ebss = .
+                0x0000000020000000                __bss_end__ = _ebss
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                end = .
+                0x0000000020000000                __end__ = .
 OUTPUT(main.elf elf32-littlearm)
 LOAD linker stubs
 

@@ -1,3 +1,4 @@
+
 #include<stdint.h>
 
 #define SRAM_START  0x20000000U
@@ -18,7 +19,7 @@ extern uint32_t _ebss;
 
 int main(void);
 
-void __libc_init_array(void);
+///void __libc_init_array(void);
 
 
 /* function prototypes of STM32F407x system exception and IRQ handlers */
@@ -245,9 +246,14 @@ void Reset_Handler(void)
 		*pDst++ = 0;
 	}
 
-	__libc_init_array();
+//	__libc_init_array();
 	
 	main();
 	
 }
+
+
+
+
+
 

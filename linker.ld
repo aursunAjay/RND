@@ -1,46 +1,54 @@
-ENTRY(reset_handler)
+ENTRY(Reset_Handler)
 
-
-_Min_Heap_Size = 0x200; /* required amount of heap */
-_Min_Stack_Size = 0x400; /* required amount of stack */
-
-/* Memory section */
 MEMORY
 {
-    CCMRAM    (xrw)    : ORIGIN = 0x10000000,   LENGTH = 64K
-    RAM       (xrw)    : ORIGIN = 0x20000000,   LENGTH = 128K
-    FLASH     (rx)     : ORIGIN = 0x8000000,    LENGTH = 1024K
+  CCMRAM    (xrw)    : ORIGIN = 0x10000000,   LENGTH = 64K
+  SRAM      (xrw)    : ORIGIN = 0x20000000,   LENGTH = 128K
+  FLASH     (rx)    : ORIGIN = 0x8000000,   LENGTH = 1024K
 }
- 
-/* Variable Sections */ 
+
 
 SECTIONS
 {
- 
-    .text :
-    {
-       . = ALIGN(4);          
-       *(.isr_vector)        
-       *(.text)
-       *(.rodata)
-       _etext = .;
-    } >FLASH  
- 
+  .text :
+  {
+    *(.isr_vector)
+    *(.text)
+	*(.text.*)
+	*(.init)
+	*(.fini)
+	*(.rodata)
+	*(.rodata.*)
+	. = ALIGN(4);
+	_etext = .;
+  }> FLASH
+  
+  _la_data = LOADADDR(.data);
+  
+  .data :
+  {
+    _sdata = .;
+	*(.data)
+	*(.data.*)
+	. = ALIGN(4);
+	_edata = .;
+  }> SRAM AT> FLASH
+  
+  .bss :
+  {
+    _sbss = .;
+	__bss_start__ = _sbss;
+	*(.bss)
+	*(.bss.*)
+	*(COMMON)
+	. = ALIGN(4);
+	_ebss = .;
+	__bss_end__ = _ebss;
+	   . = ALIGN(4); 
+	end = .;
+	__end__ = .;
+  }> SRAM
+  
 
-    .data :
-    {
-         . = ALIGN(4);
-        _sdata = .;
-        *(.data)
-        _edata = .; 
-    } >RAM AT> FLASH  
-    
-    .bss :
-    {   
-        . = ALIGN(4);
-        *(COMMON)
-         _sbss = .;
-        *(.bss) 
-    }>RAM 
-
+  
 }
