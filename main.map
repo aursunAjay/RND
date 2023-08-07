@@ -1,3 +1,15 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-errno.o)
+                              syscalls.o (__errno)
+/home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o)
+                              /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o (exit)
+/home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+                              /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
+/home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-init.o)
+                              /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o (__libc_init_array)
+/home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
+                              /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o (memset)
 
 Memory Configuration
 
@@ -9,174 +21,320 @@ FLASH            0x0000000008000000 0x0000000000100000 xr
 
 Linker script and memory map
 
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
 LOAD main.o
 LOAD startup.o
+LOAD syscalls.o
+START GROUP
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/libgcc.a
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a
+END GROUP
+START GROUP
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/libgcc.a
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a
+END GROUP
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtend.o
+LOAD /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
 
-.text           0x0000000008000000      0x224
+.text           0x0000000008000000      0x778
  *(.isr_vector)
  .isr_vector    0x0000000008000000      0x188 startup.o
                 0x0000000008000000                vectors
  *(.text)
- .text          0x0000000008000188        0xe main.o
-                0x0000000008000188                main
- *fill*         0x0000000008000196        0x2 
- .text          0x0000000008000198       0x8c startup.o
-                0x0000000008000198                RTC_Alarm_IRQHandler
-                0x0000000008000198                HASH_RNG_IRQHandler
-                0x0000000008000198                EXTI2_IRQHandler
-                0x0000000008000198                TIM8_CC_IRQHandler
-                0x0000000008000198                DebugMon_Handler
-                0x0000000008000198                TIM1_CC_IRQHandler
-                0x0000000008000198                DMA2_Stream5_IRQHandler
-                0x0000000008000198                HardFault_Handler
-                0x0000000008000198                DMA1_Stream5_IRQHandler
-                0x0000000008000198                SysTick_Handler
-                0x0000000008000198                PVD_IRQHandler
-                0x0000000008000198                SDIO_IRQHandler
-                0x0000000008000198                TAMP_STAMP_IRQHandler
-                0x0000000008000198                PendSV_Handler
-                0x0000000008000198                NMI_Handler
-                0x0000000008000198                CAN2_RX1_IRQHandler
-                0x0000000008000198                EXTI3_IRQHandler
-                0x0000000008000198                TIM8_TRG_COM_TIM14_IRQHandler
-                0x0000000008000198                TIM1_UP_TIM10_IRQHandler
-                0x0000000008000198                TIM8_UP_TIM13_IRQHandler
-                0x0000000008000198                I2C3_ER_IRQHandler
-                0x0000000008000198                EXTI0_IRQHandler
-                0x0000000008000198                I2C2_EV_IRQHandler
-                0x0000000008000198                DMA1_Stream2_IRQHandler
-                0x0000000008000198                CAN1_RX0_IRQHandler
-                0x0000000008000198                FPU_IRQHandler
-                0x0000000008000198                OTG_HS_WKUP_IRQHandler
-                0x0000000008000198                UsageFault_Handler
-                0x0000000008000198                CAN2_SCE_IRQHandler
-                0x0000000008000198                DMA2_Stream2_IRQHandler
-                0x0000000008000198                SPI1_IRQHandler
-                0x0000000008000198                TIM6_DAC_IRQHandler
-                0x0000000008000198                TIM1_BRK_TIM9_IRQHandler
-                0x0000000008000198                DCMI_IRQHandler
-                0x0000000008000198                CAN2_RX0_IRQHandler
-                0x0000000008000198                DMA2_Stream3_IRQHandler
-                0x0000000008000198                USART6_IRQHandler
-                0x0000000008000198                USART3_IRQHandler
-                0x0000000008000198                CRYP_IRQHandler
-                0x0000000008000198                CAN1_RX1_IRQHandler
-                0x0000000008000198                UART5_IRQHandler
-                0x0000000008000198                DMA2_Stream0_IRQHandler
-                0x0000000008000198                TIM4_IRQHandler
-                0x0000000008000198                I2C1_EV_IRQHandler
-                0x0000000008000198                DMA1_Stream6_IRQHandler
-                0x0000000008000198                DMA1_Stream1_IRQHandler
-                0x0000000008000198                UART4_IRQHandler
-                0x0000000008000198                TIM3_IRQHandler
-                0x0000000008000198                RCC_IRQHandler
-                0x0000000008000198                TIM8_BRK_TIM12_IRQHandler
-                0x0000000008000198                Default_Handler
-                0x0000000008000198                EXTI15_10_IRQHandler
-                0x0000000008000198                ADC_IRQHandler
-                0x0000000008000198                DMA1_Stream7_IRQHandler
-                0x0000000008000198                TIM7_IRQHandler
-                0x0000000008000198                CAN2_TX_IRQHandler
-                0x0000000008000198                TIM5_IRQHandler
-                0x0000000008000198                DMA2_Stream7_IRQHandler
-                0x0000000008000198                I2C3_EV_IRQHandler
-                0x0000000008000198                EXTI9_5_IRQHandler
-                0x0000000008000198                RTC_WKUP_IRQHandler
-                0x0000000008000198                ETH_WKUP_IRQHandler
-                0x0000000008000198                SPI2_IRQHandler
-                0x0000000008000198                OTG_HS_EP1_IN_IRQHandler
-                0x0000000008000198                MemManage_Handler
-                0x0000000008000198                DMA1_Stream0_IRQHandler
-                0x0000000008000198                CAN1_TX_IRQHandler
-                0x0000000008000198                SVC_Handler
-                0x0000000008000198                EXTI4_IRQHandler
-                0x0000000008000198                FSMC_IRQHandler
-                0x0000000008000198                ETH_IRQHandler
-                0x0000000008000198                OTG_HS_EP1_OUT_IRQHandler
-                0x0000000008000198                WWDG_IRQHandler
-                0x0000000008000198                TIM2_IRQHandler
-                0x0000000008000198                OTG_FS_WKUP_IRQHandler
-                0x0000000008000198                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0000000008000198                OTG_HS_IRQHandler
-                0x0000000008000198                EXTI1_IRQHandler
-                0x0000000008000198                USART2_IRQHandler
-                0x0000000008000198                I2C2_ER_IRQHandler
-                0x0000000008000198                DMA2_Stream1_IRQHandler
-                0x0000000008000198                CAN1_SCE_IRQHandler
-                0x0000000008000198                DMA2_Stream4_IRQHandler
-                0x0000000008000198                BusFault_Handler
-                0x0000000008000198                USART1_IRQHandler
-                0x0000000008000198                OTG_FS_IRQHandler
-                0x0000000008000198                SPI3_IRQHandler
-                0x0000000008000198                DMA1_Stream4_IRQHandler
-                0x0000000008000198                I2C1_ER_IRQHandler
-                0x0000000008000198                DMA2_Stream6_IRQHandler
-                0x0000000008000198                DMA1_Stream3_IRQHandler
-                0x000000000800019e                Reset_Handler
+ .text          0x0000000008000188        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+ .text          0x0000000008000188       0x40 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .text          0x00000000080001c8       0x7c /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+                0x00000000080001c8                _stack_init
+                0x00000000080001d0                _mainCRTStartup
+                0x00000000080001d0                _start
+ .text          0x0000000008000244      0x15c main.o
+                0x0000000008000244                led_on
+                0x0000000008000274                led_off
+                0x00000000080002a4                delay
+                0x00000000080002de                led_init_all
+                0x0000000008000350                main
+ .text          0x00000000080003a0       0x8c startup.o
+                0x00000000080003a0                RTC_Alarm_IRQHandler
+                0x00000000080003a0                HASH_RNG_IRQHandler
+                0x00000000080003a0                EXTI2_IRQHandler
+                0x00000000080003a0                TIM8_CC_IRQHandler
+                0x00000000080003a0                DebugMon_Handler
+                0x00000000080003a0                TIM1_CC_IRQHandler
+                0x00000000080003a0                DMA2_Stream5_IRQHandler
+                0x00000000080003a0                HardFault_Handler
+                0x00000000080003a0                DMA1_Stream5_IRQHandler
+                0x00000000080003a0                SysTick_Handler
+                0x00000000080003a0                PVD_IRQHandler
+                0x00000000080003a0                SDIO_IRQHandler
+                0x00000000080003a0                TAMP_STAMP_IRQHandler
+                0x00000000080003a0                PendSV_Handler
+                0x00000000080003a0                NMI_Handler
+                0x00000000080003a0                CAN2_RX1_IRQHandler
+                0x00000000080003a0                EXTI3_IRQHandler
+                0x00000000080003a0                TIM8_TRG_COM_TIM14_IRQHandler
+                0x00000000080003a0                TIM1_UP_TIM10_IRQHandler
+                0x00000000080003a0                TIM8_UP_TIM13_IRQHandler
+                0x00000000080003a0                I2C3_ER_IRQHandler
+                0x00000000080003a0                EXTI0_IRQHandler
+                0x00000000080003a0                I2C2_EV_IRQHandler
+                0x00000000080003a0                DMA1_Stream2_IRQHandler
+                0x00000000080003a0                CAN1_RX0_IRQHandler
+                0x00000000080003a0                FPU_IRQHandler
+                0x00000000080003a0                OTG_HS_WKUP_IRQHandler
+                0x00000000080003a0                UsageFault_Handler
+                0x00000000080003a0                CAN2_SCE_IRQHandler
+                0x00000000080003a0                DMA2_Stream2_IRQHandler
+                0x00000000080003a0                SPI1_IRQHandler
+                0x00000000080003a0                TIM6_DAC_IRQHandler
+                0x00000000080003a0                TIM1_BRK_TIM9_IRQHandler
+                0x00000000080003a0                DCMI_IRQHandler
+                0x00000000080003a0                CAN2_RX0_IRQHandler
+                0x00000000080003a0                DMA2_Stream3_IRQHandler
+                0x00000000080003a0                USART6_IRQHandler
+                0x00000000080003a0                USART3_IRQHandler
+                0x00000000080003a0                CRYP_IRQHandler
+                0x00000000080003a0                CAN1_RX1_IRQHandler
+                0x00000000080003a0                UART5_IRQHandler
+                0x00000000080003a0                DMA2_Stream0_IRQHandler
+                0x00000000080003a0                TIM4_IRQHandler
+                0x00000000080003a0                I2C1_EV_IRQHandler
+                0x00000000080003a0                DMA1_Stream6_IRQHandler
+                0x00000000080003a0                DMA1_Stream1_IRQHandler
+                0x00000000080003a0                UART4_IRQHandler
+                0x00000000080003a0                TIM3_IRQHandler
+                0x00000000080003a0                RCC_IRQHandler
+                0x00000000080003a0                TIM8_BRK_TIM12_IRQHandler
+                0x00000000080003a0                Default_Handler
+                0x00000000080003a0                EXTI15_10_IRQHandler
+                0x00000000080003a0                ADC_IRQHandler
+                0x00000000080003a0                DMA1_Stream7_IRQHandler
+                0x00000000080003a0                TIM7_IRQHandler
+                0x00000000080003a0                CAN2_TX_IRQHandler
+                0x00000000080003a0                TIM5_IRQHandler
+                0x00000000080003a0                DMA2_Stream7_IRQHandler
+                0x00000000080003a0                I2C3_EV_IRQHandler
+                0x00000000080003a0                EXTI9_5_IRQHandler
+                0x00000000080003a0                RTC_WKUP_IRQHandler
+                0x00000000080003a0                ETH_WKUP_IRQHandler
+                0x00000000080003a0                SPI2_IRQHandler
+                0x00000000080003a0                OTG_HS_EP1_IN_IRQHandler
+                0x00000000080003a0                MemManage_Handler
+                0x00000000080003a0                DMA1_Stream0_IRQHandler
+                0x00000000080003a0                CAN1_TX_IRQHandler
+                0x00000000080003a0                SVC_Handler
+                0x00000000080003a0                EXTI4_IRQHandler
+                0x00000000080003a0                FSMC_IRQHandler
+                0x00000000080003a0                ETH_IRQHandler
+                0x00000000080003a0                OTG_HS_EP1_OUT_IRQHandler
+                0x00000000080003a0                WWDG_IRQHandler
+                0x00000000080003a0                TIM2_IRQHandler
+                0x00000000080003a0                OTG_FS_WKUP_IRQHandler
+                0x00000000080003a0                TIM1_TRG_COM_TIM11_IRQHandler
+                0x00000000080003a0                OTG_HS_IRQHandler
+                0x00000000080003a0                EXTI1_IRQHandler
+                0x00000000080003a0                USART2_IRQHandler
+                0x00000000080003a0                I2C2_ER_IRQHandler
+                0x00000000080003a0                DMA2_Stream1_IRQHandler
+                0x00000000080003a0                CAN1_SCE_IRQHandler
+                0x00000000080003a0                DMA2_Stream4_IRQHandler
+                0x00000000080003a0                BusFault_Handler
+                0x00000000080003a0                USART1_IRQHandler
+                0x00000000080003a0                OTG_FS_IRQHandler
+                0x00000000080003a0                SPI3_IRQHandler
+                0x00000000080003a0                DMA1_Stream4_IRQHandler
+                0x00000000080003a0                I2C1_ER_IRQHandler
+                0x00000000080003a0                DMA2_Stream6_IRQHandler
+                0x00000000080003a0                DMA1_Stream3_IRQHandler
+                0x00000000080003a6                Reset_Handler
+ .text          0x000000000800042c      0x25c syscalls.o
+                0x000000000800042c                initialise_monitor_handles
+                0x0000000008000438                _getpid
+                0x0000000008000446                _kill
+                0x0000000008000466                _exit
+                0x000000000800047a                _read
+                0x00000000080004b4                _write
+                0x00000000080004ec                _close
+                0x0000000008000502                _fstat
+                0x0000000008000520                _isatty
+                0x0000000008000534                _lseek
+                0x000000000800054c                _open
+                0x0000000008000566                _wait
+                0x0000000008000584                _unlink
+                0x00000000080005a2                _times
+                0x00000000080005b8                _stat
+                0x00000000080005d6                _link
+                0x00000000080005f6                _fork
+                0x000000000800060c                _execve
+                0x000000000800062e                _sbrk
+ .text          0x0000000008000688        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-errno.o)
+ .text          0x0000000008000688        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o)
+ .text          0x0000000008000688        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+ .text          0x0000000008000688        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-init.o)
+ .text          0x0000000008000688        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
+ .text          0x0000000008000688        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtend.o
+ .text          0x0000000008000688        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
  *(.text.*)
+ .text.__errno  0x0000000008000688        0xc /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-errno.o)
+                0x0000000008000688                __errno
+ .text.exit     0x0000000008000694       0x28 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o)
+                0x0000000008000694                exit
+ .text.__libc_init_array
+                0x00000000080006bc       0x48 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-init.o)
+                0x00000000080006bc                __libc_init_array
+ .text.memset   0x0000000008000704       0x10 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
+                0x0000000008000704                memset
  *(.init)
+ .init          0x0000000008000714        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+                0x0000000008000714                _init
+ .init          0x0000000008000718        0x8 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
  *(.fini)
+ .fini          0x0000000008000720        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+                0x0000000008000720                _fini
+ .fini          0x0000000008000724        0x8 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
  *(.rodata)
+ .rodata        0x000000000800072c       0x24 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .rodata        0x0000000008000750       0x24 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtend.o
  *(.rodata.*)
-                0x0000000008000224                . = ALIGN (0x4)
-                0x0000000008000224                _etext = .
-                0x0000000008000224                _la_data = LOADADDR (.data)
+ .rodata._global_impure_ptr
+                0x0000000008000774        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+                0x0000000008000774                _global_impure_ptr
+                0x0000000008000778                . = ALIGN (0x4)
+                0x0000000008000778                _etext = .
+                0x0000000008000784                _la_data = LOADADDR (.data)
 
-.glue_7         0x0000000008000224        0x0
- .glue_7        0x0000000008000224        0x0 linker stubs
+.glue_7         0x0000000008000778        0x0
+ .glue_7        0x0000000008000778        0x0 linker stubs
 
-.glue_7t        0x0000000008000224        0x0
- .glue_7t       0x0000000008000224        0x0 linker stubs
+.glue_7t        0x0000000008000778        0x0
+ .glue_7t       0x0000000008000778        0x0 linker stubs
 
-.vfp11_veneer   0x0000000008000224        0x0
- .vfp11_veneer  0x0000000008000224        0x0 linker stubs
+.vfp11_veneer   0x0000000008000778        0x0
+ .vfp11_veneer  0x0000000008000778        0x0 linker stubs
 
-.v4_bx          0x0000000008000224        0x0
- .v4_bx         0x0000000008000224        0x0 linker stubs
+.v4_bx          0x0000000008000778        0x0
+ .v4_bx         0x0000000008000778        0x0 linker stubs
 
-.iplt           0x0000000008000224        0x0
- .iplt          0x0000000008000224        0x0 startup.o
+.iplt           0x0000000008000778        0x0
+ .iplt          0x0000000008000778        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.rel.dyn        0x0000000008000224        0x0
- .rel.iplt      0x0000000008000224        0x0 startup.o
+.eh_frame       0x0000000008000778        0x4
+ .eh_frame      0x0000000008000778        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .eh_frame      0x0000000008000778        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtend.o
 
-.data           0x0000000020000000        0x0 load address 0x0000000008000224
+.ARM.extab      0x000000000800077c        0x0
+ .ARM.extab     0x000000000800077c        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+
+.ARM.exidx      0x000000000800077c        0x8
+ .ARM.exidx     0x000000000800077c        0x8 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+                                         0x10 (size before relaxing)
+
+.rel.dyn        0x0000000008000784        0x0
+ .rel.iplt      0x0000000008000784        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+
+.data           0x0000000020000000       0x6c load address 0x0000000008000784
                 0x0000000020000000                _sdata = .
  *(.data)
- .data          0x0000000020000000        0x0 main.o
- .data          0x0000000020000000        0x0 startup.o
+ .data          0x0000000020000000        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+ .data          0x0000000020000000        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+                0x0000000020000000                __dso_handle
+ .data          0x0000000020000004        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+ .data          0x0000000020000004        0x0 main.o
+ .data          0x0000000020000004        0x0 startup.o
+ .data          0x0000000020000004        0x4 syscalls.o
+                0x0000000020000004                environ
+ .data          0x0000000020000008        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-errno.o)
+ .data          0x0000000020000008        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o)
+ .data          0x0000000020000008        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+ .data          0x0000000020000008        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-init.o)
+ .data          0x0000000020000008        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
+ .data          0x0000000020000008        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtend.o
+ .data          0x0000000020000008        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
  *(.data.*)
-                0x0000000020000000                . = ALIGN (0x4)
-                0x0000000020000000                _edata = .
+ .data._impure_ptr
+                0x0000000020000008        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+                0x0000000020000008                _impure_ptr
+ .data.impure_data
+                0x000000002000000c       0x60 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+                0x000000002000006c                . = ALIGN (0x4)
+                0x000000002000006c                _edata = .
 
-.igot.plt       0x0000000020000000        0x0 load address 0x0000000008000224
- .igot.plt      0x0000000020000000        0x0 startup.o
+.init_array     0x000000002000006c        0x4 load address 0x00000000080007f0
+ .init_array    0x000000002000006c        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.bss            0x0000000020000000        0x0 load address 0x0000000008000224
-                0x0000000020000000                _sbss = .
-                0x0000000020000000                __bss_start__ = _sbss
+.fini_array     0x0000000020000070        0x4 load address 0x00000000080007f4
+ .fini_array    0x0000000020000070        0x4 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+
+.igot.plt       0x0000000020000074        0x0 load address 0x00000000080007f8
+ .igot.plt      0x0000000020000074        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+
+.bss            0x0000000020000074       0x24 load address 0x00000000080007f8
+                0x0000000020000074                _sbss = .
+                0x0000000020000074                __bss_start__ = _sbss
  *(.bss)
- .bss           0x0000000020000000        0x0 main.o
- .bss           0x0000000020000000        0x0 startup.o
+ .bss           0x0000000020000074        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+ .bss           0x0000000020000074       0x1c /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .bss           0x0000000020000090        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+ .bss           0x0000000020000090        0x0 main.o
+ .bss           0x0000000020000090        0x0 startup.o
+ .bss           0x0000000020000090        0x8 syscalls.o
+                0x0000000020000090                __env
+ .bss           0x0000000020000098        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-errno.o)
+ .bss           0x0000000020000098        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o)
+ .bss           0x0000000020000098        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+ .bss           0x0000000020000098        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-init.o)
+ .bss           0x0000000020000098        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
+ .bss           0x0000000020000098        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtend.o
+ .bss           0x0000000020000098        0x0 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
  *(.bss.*)
  *(COMMON)
-                0x0000000020000000                . = ALIGN (0x4)
-                0x0000000020000000                _ebss = .
-                0x0000000020000000                __bss_end__ = _ebss
-                0x0000000020000000                . = ALIGN (0x4)
-                0x0000000020000000                end = .
-                0x0000000020000000                __end__ = .
+                0x0000000020000098                . = ALIGN (0x4)
+                0x0000000020000098                _ebss = .
+                0x0000000020000098                __bss_end__ = _ebss
+                0x0000000020000098                . = ALIGN (0x4)
+                0x0000000020000098                end = .
+                0x0000000020000098                __end__ = .
 OUTPUT(main.elf elf32-littlearm)
 LOAD linker stubs
+
+.ARM.attributes
+                0x0000000000000000       0x2a
+ .ARM.attributes
+                0x0000000000000000       0x1e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+ .ARM.attributes
+                0x000000000000001e       0x2e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .ARM.attributes
+                0x000000000000004c       0x1c /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+ .ARM.attributes
+                0x0000000000000068       0x2e main.o
+ .ARM.attributes
+                0x0000000000000096       0x2e startup.o
+ .ARM.attributes
+                0x00000000000000c4       0x2e syscalls.o
+ .ARM.attributes
+                0x00000000000000f2       0x2e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x0000000000000120       0x2e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x000000000000014e       0x2e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000000000000017c       0x2e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000000001aa       0x2e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000000001d8       0x2e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtend.o
+ .ARM.attributes
+                0x0000000000000206       0x1e /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
 
 .comment        0x0000000000000000       0x49
  .comment       0x0000000000000000       0x49 main.o
                                          0x4a (size before relaxing)
  .comment       0x0000000000000049       0x4a startup.o
+ .comment       0x0000000000000049       0x4a syscalls.o
 
-.ARM.attributes
-                0x0000000000000000       0x2e
- .ARM.attributes
-                0x0000000000000000       0x2e main.o
- .ARM.attributes
-                0x000000000000002e       0x2e startup.o
+.debug_frame    0x0000000000000000       0x94
+ .debug_frame   0x0000000000000000       0x20 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-errno.o)
+ .debug_frame   0x0000000000000020       0x28 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x0000000000000048       0x2c /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000000074       0x20 /home/ajay/Downloads/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
