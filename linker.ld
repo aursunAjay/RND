@@ -42,7 +42,7 @@ SECTIONS
 	*(.bss.*) 
 	*(COMMON)
 	. = ALIGN(4);
-	_ebss = .;
+	_ebss = .; 
 	__bss_end__ = _ebss;
 	   . = ALIGN(4); 
 	end = .;
